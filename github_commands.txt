@@ -1,3 +1,6 @@
+live url : https://chaitanyagithub28.github.io/amazon_clone/
+
+
 Quick setup — if you’ve done this kind of thing before
 or	
 https://github.com/chaitanyagithub28/amazon_clone.git
