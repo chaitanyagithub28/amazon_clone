@@ -122,6 +122,9 @@
     margin-right: 10px;
     background-color: rgb(247, 155, 80);
   }
+  .btn-desc {
+    color: red;
+  }
   
   
   /* items-body */
@@ -153,6 +156,11 @@
     padding: 25px;
   }
   
+.mydark {
+    background-color:black;
+    color:white;
+}
+
   @media screen and (max-width:1225px){
     .items{
         width: auto;
