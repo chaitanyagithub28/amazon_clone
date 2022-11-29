@@ -156,10 +156,10 @@
     padding: 25px;
   }
   
-.mydark {
-    background-color:black;
-    color:white;
-}
+  .mydark {
+      background-color:black;
+      color:white;
+  }
 
   @media screen and (max-width:1225px){
     .items{
