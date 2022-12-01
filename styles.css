@@ -7,6 +7,23 @@
   color: red;
 }
 
+#coupon{
+  height:200px;
+  width:400px;
+  /* background-color:gray;  */
+  margin-left: 35%;
+  position: absolute;
+  z-index: 100;
+  margin-top:-65%;
+  visibility: hidden;   
+}  
+
+.my-img {
+  height: 500px;
+  width: 500px;
+  align-items: center;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -167,4 +184,3 @@
         width: auto;
     }
   }
-  
