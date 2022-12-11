@@ -12,11 +12,14 @@
     <div id="main">
     <nav>
       <div class="left dflex">
-        <a href="#"><img src="img/amazon.png" alt="logo" class="logo" /><span>.in</span></a>
+        <a href="#"><img src="img/amazon.png" alt="logo" class="logo"/></a>
         <div class="item">
-          <p><i class="fa fa-map-marker me"></i>hello,</p>
-          <h5>enter your address</h5>
+          <button class="btn btn-dark btn-desc" onclick="geolocation()"> Location </button>
         </div>
+        <div class="item">
+          <p id="city"></p>
+          <p id="weather"></p>
+        </div>  
       </div>
       <div class="searchBox dflex">
         <div class="box">
@@ -36,12 +39,13 @@
           <button class="btn btn-dark btn-desc" onClick="changeMode()"> mode </button>
         </div>
         <div class="item">
-          <p>Hello,</p>
-          <h5>Account & Lists<i class="fa fa-sort-desc"></i></h5>
+          <button class="btn btn-dark btn-desc"> Account </button>
         </div>
         <div class="item">
-          <p>Returns</p>
-          <h5>& Order</h5>
+          <button class="btn btn-dark btn-desc"> Orders </button>
+        </div>
+        <div class="item">
+          <button class="btn btn-dark btn-desc"> Returns </button>
         </div>
         <div class="item"><i class="fa fa-shopping-cart fa-2x"></i>Cart</div>
       </div>
@@ -119,6 +123,26 @@
     <script>
         window.onload = loadCoupon()
         window.onload = changeMode()
+    </script>
+    <script>
+        function showPosition(data) 
+        {
+          let y = document.getElementById('city')
+          let z = document.getElementById('weather')
+          console.log(data)
+          let a = data.coords.latitude;
+          let b = data.coords.longitude;
+          <!-- let s = `Latitude: ${a} and Longitude: ${b}`
+          x.innerText = s -->
+          let c = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${a}&lon=${b}&mode=json&units=metric&cnt=5&appid=fbf712a5a83d7305c3cda4ca8fe7ef29`;
+          fetch(c,{method: 'GET'})
+          .then((res) => res.json())
+          .then((data) => {
+              console.log(data)
+              y.innerText = data.city.name
+              z.innerText = data.list[0].temp.day
+          })
+        }
     </script>
   </body>
 </html>

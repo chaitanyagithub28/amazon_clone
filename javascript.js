@@ -14,3 +14,17 @@ function closeCoupon(){
     let mybody = document.body;
     mybody.classList.toggle('mydark')     
 }
+
+// geo location
+
+// let x = document.getElementById('coordinates')
+let y = document.getElementById('city')
+let z = document.getElementById('weather')
+
+function geolocation() {
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition)
+    }else{
+        x.innerText = `location not found`
+    }
+}
